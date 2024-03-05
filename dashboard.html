@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard page</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Company Metrics</h3>
+      <div class="first-row">
+        <div class="card">
+          <h2 class="num" style="color: rgb(217, 72, 72)">$64,492</h2>
+          <h3 class="text">Total Revenue ?</h3>
+        </div>
+        <div class="card">
+          <h2 class="num">$608</h2>
+          <h3 class="text">Total Jobs Avg</h3>
+        </div>
+        <div class="card">
+          <h2 class="num">106</h2>
+          <h3 class="text">Tickets Created</h3>
+        </div>
+        <div class="card">
+          <h2 class="num">66</h2>
+          <h3 class="text">Tickets Scheduled</h3>
+        </div>
+      </div>
+      <div class="second-row">
+        <div class="card">
+          <h2 class="num" style="color: red">$19,304.52</h2>
+          <h3 class="text">Outstanding Amount ?</h3>
+        </div>
+        <div class="card">
+          <h2 class="num">0</h2>
+          <h3 class="text">Memberships Sold</h3>
+        </div>
+        <div class="card">
+          <h2 class="num">8</h2>
+          <h3 class="text">Jobs Completed</h3>
+        </div>
+        <div class="card">
+          <h2 class="num">2</h2>
+          <h3 class="text">Total Cancelled</h3>
+        </div>
+      </div>
+
+      <div class="graphs">
+        <div class="graph1">
+          <h2>Revenue by Job Location</h2>
+          <div class="g">
+            <canvas id="chart" width="400" height="400"></canvas>
+            <h4 style="text-align: center">Revenue for December 2023</h4>
+          </div>
+        </div>
+        <div class="graph2">
+          <h2>Revenue by Job Type</h2>
+          <div class="g">
+            <canvas id="chart2" width="400" height="400"></canvas>
+            <h4 style="text-align: center">Revenue for December 2023</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var countryNames = [
+        "Social Circle",
+        "Malibu",
+        "Snohomish",
+        "New York",
+        "Everett",
+        "Seattle",
+        "London",
+      ];
+      var revenues = [16000, 13000, 6500, 5900, 2700, 2200, 1500];
+
+      //Bar chart creation
+      var ctx = document.getElementById("chart").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: countryNames,
+          datasets: [
+            {
+              barPercentage: 0.3,
+              label: "Revenue for December 2023",
+              data: revenues,
+              backgroundColor: "red",
+            },
+          ],
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false,
+              position: "bottom",
+            },
+          },
+        },
+      });
+    </script>
+
+    <script>
+      var countryNames = [
+        "alarm system",
+        "Backflow Testing",
+        "Diagnosis",
+        "Fire Extinguisher",
+        "pump",
+      ];
+      var revenues = [30000, 15300, 6500, 5900, 1000];
+
+      // Bar chart second
+      var ctx = document.getElementById("chart2").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: countryNames,
+          datasets: [
+            {
+              barPercentage: 0.25,
+              label: "Revenue for December 2023",
+              data: revenues,
+              backgroundColor: "red",
+            },
+          ],
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          scales: {
+            x: {
+              ticks: {
+                stepSize: 2000,
+              },
+            },
+          },
+
+          plugins: {
+            legend: {
+              display: false,
+              position: "bottom",
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

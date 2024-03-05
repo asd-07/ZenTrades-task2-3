@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIa5v--2dHMSpirmKahaAEO7WvsWE8ClJ5iA&usqp=CAU');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-container {
+    background: transparent;
+
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    height: 400px;
+    width:400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color:white;
+  }
+  
+  .logo-box {
+    margin-bottom: 35px;
+  }
+  
+  .logo-box img {
+    width: 400px; /* Adjust as needed */
+    height: auto;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 2px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  input[type="checkbox"]:checked {
+    background-color: red;
+  }
+  /* input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #db6162;
+    color: #fff;
+    cursor: pointer;
+  } */
+  .btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #db6162;
+    color: #fff;
+    cursor: pointer;
+    height: 50px;
+  }
+
+
+
